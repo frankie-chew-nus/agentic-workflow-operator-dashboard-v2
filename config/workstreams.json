@@ -1,0 +1,8 @@
+{
+  "A": {"provider": "perplexity", "model": "sonar-pro", "timeout_seconds": 90},
+  "B": {"provider": "gemini", "model": "gemini-2.5-flash", "timeout_seconds": 120},
+  "C": {"provider": "gemini", "model": "gemini-2.5-flash", "dmr": {"provider": "local_openai_compatible", "model": "local-model", "base_url": "http://127.0.0.1:1234/v1"}, "timeout_seconds": 180},
+  "D": {"provider": "none"},
+  "E": {"provider": "none"},
+  "execution": {"symbol": "XAUUSD", "timeframe": "M1", "starting_equity": 10000, "pip_size": 0.01, "friction_pips": 9, "max_drawdown_percent": 15, "max_daily_activities": 2000, "min_cpc": 1.2, "min_oos_trades": 100, "max_variants": 24, "max_bars": 50000, "heartbeat_seconds": 10}
+}
