@@ -1,0 +1,11 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+operator.db
+operator.db-shm
+operator.db-wal
+artifacts/
+data/
+strategies/
+.pytest_cache/
