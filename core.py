@@ -2,6 +2,19 @@
 import csv,hashlib,json,os,sqlite3,time,uuid,urllib.request
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
+
+def load_local_env():
+    """Load simple KEY=VALUE lines from the project .env without overwriting process env."""
+    p=ROOT/".env"
+    if not p.exists(): return
+    for raw in p.read_text(encoding="utf-8").splitlines():
+        line=raw.strip()
+        if not line or line.startswith("#") or "=" not in line: continue
+        key,value=line.split("=",1)
+        key=key.strip();value=value.strip().strip('"').strip("'")
+        if key and key not in os.environ: os.environ[key]=value
+load_local_env()
+
 CFG=json.loads((ROOT/"config/workstreams.json").read_text(encoding="utf-8"))
 
 def digest(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
@@ -159,7 +172,7 @@ def execute(rid,stage):
             if prior["strategy_sha256"]!=codehash or prior["parameters"]!=params: raise ValueError("STRATEGY_OR_PARAMETERS_CHANGED_SINCE_C")
         result=simulate(bars,sig,params)
         out={k:v for k,v in result.items() if k!="trades"}
-        out.update({"stage":stage,"candidate_id":candidate["candidate_id"],"strategy_sha256":codehash,"dataset_sha256":digest(ROOT/("data"/"development.csv" if stage=="C" else "data"/"oos_restricted.csv")),"parameters":params,"execution_model":"DIAGNOSTIC_ONE_BAR_NOT_COMMISSIONABLE","qualified":False,"reason":"Strategy-specific stops/position sizing and independent CPC validation not implemented"})
+        out.update({"stage":stage,"candidate_id":candidate["candidate_id"],"strategy_sha256":codehash,"dataset_sha256":digest(ROOT/"data"/("development.csv" if stage=="C" else "oos_restricted.csv")),"parameters":params,"execution_model":"DIAGNOSTIC_ONE_BAR_NOT_COMMISSIONABLE","qualified":False,"reason":"Strategy-specific stops/position sizing and independent CPC validation not implemented"})
         with c:
             artifact(c,rid,stage,"ledger",result["trades"])
             artifact(c,rid,stage,"stage1" if stage=="C" else "oos",out)
