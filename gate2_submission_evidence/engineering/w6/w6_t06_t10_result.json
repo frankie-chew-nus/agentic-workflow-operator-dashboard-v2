@@ -1,0 +1,44 @@
+{
+  "evidence_class": "EXECUTABLE_TRANSITION_GUARD_TEST",
+  "scope": "workflow_matrix.allowed only; not full W6.2 B-to-C enforcement",
+  "timestamp_utc": "2026-10-18T15:11:48.040733+00:00",
+  "git_branch": "test/w6-governance-scenarios",
+  "git_commit": "c26a4d4629f548c4d71c71078b35912bea2d991f",
+  "test_sha256": "8c81940bbb4d62c58e75aeeda1ac3e61eedc935572bb91f2e0fbc1c662680686",
+  "guard_sha256": "9421203c264b5bfe6652ff8e60dc074f1ec6bdbd71f7b05d10535229054c654f",
+  "n": 5,
+  "denominator": 5,
+  "test_run_verdict": "PASS",
+  "scenario_assessment": {
+    "T06": "PARTIAL: human flag hold",
+    "T07": "PARTIAL: repeated human=false; no real time/reminder test",
+    "T08": "PARTIAL: identity/hash holds; no version-retention test",
+    "T09": "NOT_VERIFIED: aggregate-limit enforcement not tested",
+    "T10": "NOT_VERIFIED: rule-change authority not tested"
+  },
+  "test_cases": [
+    {
+      "name": "test_T06_missing_human_release_holds",
+      "result": "ok"
+    },
+    {
+      "name": "test_T07_human_silence_does_not_auto_release",
+      "result": "ok"
+    },
+    {
+      "name": "test_T08_identity_and_hash_controls_on_corrected_release",
+      "result": "ok"
+    },
+    {
+      "name": "test_T09_aggregate_limit_not_enforced_in_transition_guard",
+      "result": "ok"
+    },
+    {
+      "name": "test_T10_rule_change_authority_not_enforced_in_transition_guard",
+      "result": "ok"
+    }
+  ],
+  "raw_log_sha256": "7581627e1935d20499fe984018f23737a64d336a8fcc3266538562bf1e28e3be",
+  "sanitized_log": "test_T06_missing_human_release_holds ... ok\ntest_T07_human_silence_does_not_auto_release ... ok\ntest_T08_identity_and_hash_controls_on_corrected_release ... ok\ntest_T09_aggregate_limit_not_enforced_in_transition_guard ... ok\ntest_T10_rule_change_authority_not_enforced_in_transition_guard ... ok\nRan 5 tests\nOK\n",
+  "production_authority": false
+}

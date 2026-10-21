@@ -1,0 +1,44 @@
+{
+  "evidence_class": "ISOLATED_POLICY_REMEDIATION_TEST",
+  "scope": "Synthetic policy/harness tests only; active B adapter not modified or integrated",
+  "timestamp_utc": "2026-10-19T02:29:01.719225+00:00",
+  "git_branch": "fix/w6-b-governance-controls",
+  "git_commit": "1d22ffcb2eac52c6637dd7787d5c40759faa8d74",
+  "source_sha256": {
+    "b_boundary_policy_v1.py": "70a46b64c7ec0d521e9184a5fd89e7a44d573b2d21d4d19e14fb59c2f5518dcc",
+    "isolated_b_policy_harness.py": "3d847f79f007eef9e19f4ae93e623ad9d7ed7c94c9ff3b2117a7b2e14f9787ce",
+    "test_isolated_b_policy_harness.py": "c04f890d4fbc19c2f2376ccde75dc30c7f7a6654a1a71320cb8c7282a016f163"
+  },
+  "n": 6,
+  "denominator": 6,
+  "verdict": "PASS",
+  "production_authority": false,
+  "test_cases": [
+    {
+      "name": "test_T04_unavailable_resource",
+      "result": "ok"
+    },
+    {
+      "name": "test_T05_opaque_dependency",
+      "result": "ok"
+    },
+    {
+      "name": "test_T09_fourth_candidate",
+      "result": "ok"
+    },
+    {
+      "name": "test_T10_unauthorized_rule_change",
+      "result": "ok"
+    },
+    {
+      "name": "test_missing_trusted_context_fail_closed",
+      "result": "ok"
+    },
+    {
+      "name": "test_positive_candidate_not_auto_released",
+      "result": "ok"
+    }
+  ],
+  "raw_log_sha256": "d85cc66747e665cf7e8f705fa2ec9164cc895a794c78ee7b542291b955141cf2",
+  "sanitized_log": "test_T04_unavailable_resource ... ok\ntest_T05_opaque_dependency ... ok\ntest_T09_fourth_candidate ... ok\ntest_T10_unauthorized_rule_change ... ok\ntest_missing_trusted_context_fail_closed ... ok\ntest_positive_candidate_not_auto_released ... ok\nRan 6 tests\nOK\n"
+}

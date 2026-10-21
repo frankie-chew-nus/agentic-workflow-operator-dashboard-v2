@@ -1,0 +1,59 @@
+{
+  "evidence_class": "PRE_REMEDIATION_SNAPSHOT_VERIFICATION",
+  "timestamp_utc": "2026-10-19T02:25:16.277438+00:00",
+  "branch": "fix/w6-b-governance-controls",
+  "git_commit": "acaeb2e88affb9917a8de8118a777d566e0600d2",
+  "tracked_files_clean": true,
+  "untracked_files_excluded_from_check": true,
+  "database": {
+    "original_sha256": "158482d6edd407984f7dd93bdb11fd0c31295f0ee4f6b4343d1e89cfc67d22db",
+    "backup_sha256": "b27e120aea511c20b13d12cecf73ead8249162414b38ca1b89df02e3a6f24884",
+    "original_integrity": "ok",
+    "backup_integrity": "ok",
+    "table_row_counts": {
+      "artifacts": {
+        "original": 2,
+        "backup": 2,
+        "match": true
+      },
+      "candidates": {
+        "original": 3,
+        "backup": 3,
+        "match": true
+      },
+      "decisions": {
+        "original": 11,
+        "backup": 11,
+        "match": true
+      },
+      "jobs": {
+        "original": 5,
+        "backup": 5,
+        "match": true
+      },
+      "research": {
+        "original": 1,
+        "backup": 1,
+        "match": true
+      }
+    },
+    "note": "Row counts and integrity match; logical database equality not proven"
+  },
+  "adapters": [
+    {
+      "file": "b_resume.py",
+      "sha256": "e1510bb49fe8f8213327f61d25beab2842c9d3f5ff8d8240f233d3e76192d316"
+    },
+    {
+      "file": "b_regression_guard.py",
+      "sha256": "4ecce37ed3c2bf960f23b2d796337a94ef9ccb3691c79aced3fafe15af6606b5"
+    },
+    {
+      "file": "b_resume_model_flow_v1_1.py",
+      "sha256": "0debbb660ea5a21cf1e70e59387ca06143b9041b8bc51f05ec873b0a7804fbe4"
+    }
+  ],
+  "raw_database_uploaded": false,
+  "production_authority": false,
+  "verification": "PASS"
+}

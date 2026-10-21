@@ -1,0 +1,44 @@
+{
+  "evidence_class": "ACTIVE_B_RESUME_NEGATIVE_INTEGRATION_TEST",
+  "scope": "b_resume.py with disposable SQLite DB and synthetic candidate; tests are NOT full B-to-C release path",
+  "timestamp_utc": "2026-10-19T02:01:32.968875+00:00",
+  "git_branch": "test/w6-governance-scenarios",
+  "git_commit": "a278d19a15224a00ba6f9f60e61bd7d270fcfd88",
+  "adapter_path": "../gate2_operator_app_v1/b_resume.py",
+  "adapter_sha256": "e1510bb49fe8f8213327f61d25beab2842c9d3f5ff8d8240f233d3e76192d316",
+  "test_sha256": "5d3ed82628dfe6fca58e5f803bf10e2622afe8f860316f36aed3dc174556f1ac",
+  "n": 4,
+  "denominator": 4,
+  "test_run_verdict": "FAILED_EXPECTED_GAPS",
+  "passed": 0,
+  "failed": 4,
+  "findings": [
+    {
+      "id": "T04",
+      "expected": "GOVERNANCE_HOLD (exit 2)",
+      "observed": "b_resume.py returned 0 (candidate awaiting Human release)",
+      "status": "BOUNDARY_GAP"
+    },
+    {
+      "id": "T05",
+      "expected": "GOVERNANCE_HOLD (exit 2)",
+      "observed": "b_resume.py returned 0 (candidate awaiting Human release)",
+      "status": "BOUNDARY_GAP"
+    },
+    {
+      "id": "T09",
+      "expected": "GOVERNANCE_HOLD (exit 2)",
+      "observed": "b_resume.py returned 0 (candidate awaiting Human release)",
+      "status": "BOUNDARY_GAP"
+    },
+    {
+      "id": "T10",
+      "expected": "GOVERNANCE_HOLD (exit 2)",
+      "observed": "b_resume.py returned 0 (candidate awaiting Human release)",
+      "status": "BOUNDARY_GAP"
+    }
+  ],
+  "raw_log_sha256": "35c7617447586b894b1f595a9e2f6d700a77272805f7bff6a9c44261e7b4d4a4",
+  "sanitized_log": "test_T04_unavailable_resource_must_hold ... FAIL\ntest_T05_opaque_dependency_must_hold ... FAIL\ntest_T09_fourth_candidate_must_hold ... FAIL\ntest_T10_unauthorized_governance_rule_change_must_hold ... FAIL\nRan 4 tests\nFAILED (failures=4)\n",
+  "production_authority": false
+}

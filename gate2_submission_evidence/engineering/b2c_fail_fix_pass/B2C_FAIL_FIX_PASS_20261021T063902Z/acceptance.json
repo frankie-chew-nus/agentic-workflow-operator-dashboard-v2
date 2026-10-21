@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "execution_class": "IN_VITRO_DISPOSABLE_HTTP_SQLITE",
+  "timestamp_utc": "20261021T063902Z",
+  "test_exit_code": 0,
+  "test_suites": [
+    "test_b_actual_http_fail_fix_pass",
+    "test_ae_build_contract",
+    "test_b_operational_boundary",
+    "test_actual_dashboard_hold_no_pin"
+  ],
+  "source_sha256": {
+    "gate2.py": "6c7cc2edc6d20dfc4ecccc34d830d192b4002800b70f28140d49a8ac9c267dc6",
+    "b_disposable_governed_http_release.py": "2240a87996b980cf31e85c7b04bd10015b3eadcfed4856a4d0de339e695d949b",
+    "b_operational_boundary.py": "8b96654d273d513bf4ea8214961a76ce6e8a4e736b1582dff83386e1944c0ae8",
+    "test_b_actual_http_fail_fix_pass.py": "c9040b7b029115900c6471e219ad674d84723b922875723a82d791af8a96db37",
+    "test_actual_dashboard_hold_no_pin.py": "dceb67458a892d5c49c8eb90d36a48a544fd6cb56bf7d35f39d905e2e9e3741c",
+    "test_ae_build_contract.py": "171f47822737223ceee5c78a744e06b9811710af572ddf9a6ff51bbd5b65da9b",
+    "test_b_operational_boundary.py": "c6acefc2021aa6670f088800ce0d8c5b5fb85dc20630a165b5b10c01b19ecb6c"
+  },
+  "source_unchanged": true,
+  "scenarios": {
+    "T04_missing_resource": "HOLD_EXPECTED",
+    "T05_prohibited_dependency": "HOLD_EXPECTED",
+    "T09_fourth_candidate": "HOLD_EXPECTED",
+    "T10_unauthorized_rule_change": "HOLD_EXPECTED",
+    "authorized_synthetic_candidate": "READY_FOR_C_ONCE_EXPECTED",
+    "duplicate_release": "NO_SECOND_RELEASE_EXPECTED",
+    "missing_trusted_host_context": "HOLD_EXPECTED",
+    "baseline_to_corrected_same_candidate": "HOLD_THEN_READY_FOR_C_EXPECTED"
+  },
+  "historical_failures": "Historical T04/T05/T09/T10 boundary failures documented separately; not replayed or relabelled here",
+  "production_authority": false,
+  "pin_in_scope": false,
+  "active_dashboard_db_modified": false,
+  "no_c_d_e_execution": true,
+  "limitations": [
+    "Trusted approval is synthetic host-injected test evidence",
+    "Production B-to-C stays HOLD-only",
+    "Does not establish operational T04/T05/T09/T10 verification",
+    "Does not qualify C, D or E trading outcomes"
+  ]
+}

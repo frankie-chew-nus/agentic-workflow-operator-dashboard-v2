@@ -1,0 +1,17 @@
+test_actual_dashboard_release_handler_is_inspected (test_ae_build_contract.AEContractTests.test_actual_dashboard_release_handler_is_inspected) ... ok
+test_historical_release_is_not_mutated_by_inspection (test_ae_build_contract.AEContractTests.test_historical_release_is_not_mutated_by_inspection) ... ok
+test_incomplete_provenance_blocks_commissioning (test_ae_build_contract.AEContractTests.test_incomplete_provenance_blocks_commissioning) ... ok
+test_no_human_authority_blocks_transition (test_ae_build_contract.AEContractTests.test_no_human_authority_blocks_transition) ... ok
+test_sandbox_d_cannot_advance_to_e (test_ae_build_contract.AEContractTests.test_sandbox_d_cannot_advance_to_e) ... ok
+test_stage1_review_cannot_advance_to_d (test_ae_build_contract.AEContractTests.test_stage1_review_cannot_advance_to_d) ... ok
+test_unverified_hash_blocks_transition (test_ae_build_contract.AEContractTests.test_unverified_hash_blocks_transition) ... ok
+test_fourth_candidate_holds (test_b_operational_boundary.BoundaryTests.test_fourth_candidate_holds) ... ok
+test_historical_release_never_reissued (test_b_operational_boundary.BoundaryTests.test_historical_release_never_reissued) ... ok
+test_new_candidate_without_operational_evidence_holds (test_b_operational_boundary.BoundaryTests.test_new_candidate_without_operational_evidence_holds) ... ok
+test_synthetic_pass_does_not_grant_live_release (test_b_operational_boundary.BoundaryTests.test_synthetic_pass_does_not_grant_live_release) ... ok
+test_actual_dashboard_blocks_release_and_preserves_ledger (test_actual_dashboard_hold_no_pin.ActualHoldOnlyTests.test_actual_dashboard_blocks_release_and_preserves_ledger) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.609s
+
+OK

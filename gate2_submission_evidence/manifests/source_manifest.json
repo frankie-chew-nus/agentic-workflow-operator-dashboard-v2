@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "created_date": "2026-10-21",
+  "status": "INITIAL_CURATED_IMPORT_NOT_FINAL_SUBMISSION_SET",
+  "target": {
+    "repository": "frankie-chew-nus/agentic-workflow-operator-dashboard-v2",
+    "branch": "build/gate2-source-import",
+    "base_commit": "83dcb3f85c2ec62187375a538abe4098e1b1e3f1"
+  },
+  "source_repository": "frankie-chew-nus/agentic-workflow-operator-dashboard",
+  "hash_note": "GitHub Git blob SHA is used here to confirm byte-identical copies; it is not the same thing as a SHA-256 checksum stated inside an artifact.",
+  "artifacts": [
+    {
+      "destination": "gate2_submission_evidence/engineering/w6/W6_GOVERNANCE_EVIDENCE_REPORT.md",
+      "source_repository": "frankie-chew-nus/agentic-workflow-operator-dashboard",
+      "source_branch": "fix/w6-b-governance-controls",
+      "source_path": "gate2_submission_evidence/governance_tests/W6_GOVERNANCE_EVIDENCE_REPORT.md",
+      "source_git_blob_sha": "6f47c9b6ecddd205e4439460edc94d732cca75c5",
+      "destination_git_blob_sha": "6f47c9b6ecddd205e4439460edc94d732cca75c5",
+      "copy_status": "EXACT_BLOB_MATCH",
+      "purpose": "W6 paper/executable governance audit"
+    },
+    {
+      "destination": "gate2_submission_evidence/engineering/w6/w6_t01_t03_result.json",
+      "source_repository": "frankie-chew-nus/agentic-workflow-operator-dashboard",
+      "source_branch": "fix/w6-b-governance-controls",
+      "source_path": "gate2_submission_evidence/governance_tests/w6_t01_t03_result.json",
+      "source_git_blob_sha": "737fe0f1adf5d88b2b00eb85d4d4a2fe36ff6942",
+      "destination_git_blob_sha": "737fe0f1adf5d88b2b00eb85d4d4a2fe36ff6942",
+      "copy_status": "EXACT_BLOB_MATCH",
+      "purpose": "Historical B checker positive/negative cases"
+    },
+    {
+      "destination": "gate2_submission_evidence/engineering/w6/w6_t04_t05_findings.json",
+      "source_repository": "frankie-chew-nus/agentic-workflow-operator-dashboard",
+      "source_branch": "fix/w6-b-governance-controls",
+      "source_path": "gate2_submission_evidence/governance_tests/w6_t04_t05_findings.json",
+      "source_git_blob_sha": "96aa6828b21b217f5797acafc7817ffff6c4534b",
+      "destination_git_blob_sha": "96aa6828b21b217f5797acafc7817ffff6c4534b",
+      "copy_status": "EXACT_BLOB_MATCH",
+      "purpose": "Historical missing-resource/dependency gaps"
+    },
+    {
+      "destination": "gate2_submission_evidence/engineering/w6/w6_t06_t10_result.json",
+      "source_repository": "frankie-chew-nus/agentic-workflow-operator-dashboard",
+      "source_branch": "fix/w6-b-governance-controls",
+      "source_path": "gate2_submission_evidence/governance_tests/w6_t06_t10_result.json",
+      "source_git_blob_sha": "6abcce34c4fd2bc17f8b273be9e8c39c37af8c6f",
+      "destination_git_blob_sha": "6abcce34c4fd2bc17f8b273be9e8c39c37af8c6f",
+      "copy_status": "EXACT_BLOB_MATCH",
+      "purpose": "Transition-guard partial checks"
+    },
+    {
+      "destination": "gate2_submission_evidence/engineering/w6/w6_t09_t10_findings.json",
+      "source_repository": "frankie-chew-nus/agentic-workflow-operator-dashboard",
+      "source_branch": "fix/w6-b-governance-controls",
+      "source_path": "gate2_submission_evidence/governance_tests/w6_t09_t10_findings.json",
+      "source_git_blob_sha": "72a932490219fa25196dc298059fb368020c5c85",
+      "destination_git_blob_sha": "72a932490219fa25196dc298059fb368020c5c85",
+      "copy_status": "EXACT_BLOB_MATCH",
+      "purpose": "Aggregate-count and policy-authority gaps"
+    },
+    {
+      "destination": "gate2_submission_evidence/engineering/w6/w6_active_b_t04_t05_t09_t10_findings.json",
+      "source_repository": "frankie-chew-nus/agentic-workflow-operator-dashboard",
+      "source_branch": "fix/w6-b-governance-controls",
+      "source_path": "gate2_submission_evidence/governance_tests/w6_active_b_t04_t05_t09_t10_findings.json",
+      "source_git_blob_sha": "4f6d83645a5a3ab6d7a5acbe8a2c89025db2cc9b",
+      "destination_git_blob_sha": "4f6d83645a5a3ab6d7a5acbe8a2c89025db2cc9b",
+      "copy_status": "EXACT_BLOB_MATCH",
+      "purpose": "Four active resume-boundary negative findings"
+    },
+    {
+      "destination": "gate2_submission_evidence/engineering/w6/w6_pre_remediation_manifest.json",
+      "source_repository": "frankie-chew-nus/agentic-workflow-operator-dashboard",
+      "source_branch": "fix/w6-b-governance-controls",
+      "source_path": "gate2_submission_evidence/governance_tests/w6_pre_remediation_manifest.json",
+      "source_git_blob_sha": "cc78a5e5e6de5f97fc307a65d7aafd334d58fb61",
+      "destination_git_blob_sha": "cc78a5e5e6de5f97fc307a65d7aafd334d58fb61",
+      "copy_status": "EXACT_BLOB_MATCH",
+      "purpose": "Pre-remediation hash and local SQLite integrity summary"
+    },
+    {
+      "destination": "gate2_submission_evidence/engineering/w6/w6_isolated_remediation_result.json",
+      "source_repository": "frankie-chew-nus/agentic-workflow-operator-dashboard",
+      "source_branch": "fix/w6-b-governance-controls",
+      "source_path": "gate2_submission_evidence/governance_tests/w6_isolated_remediation_result.json",
+      "source_git_blob_sha": "b1c8838d4af766864c87534f0898334a3e73e560",
+      "destination_git_blob_sha": "b1c8838d4af766864c87534f0898334a3e73e560",
+      "copy_status": "EXACT_BLOB_MATCH",
+      "purpose": "Six isolated synthetic remediation cases"
+    },
+    {
+      "destination": "gate2_submission_evidence/engineering/acceptance/AE_Acceptance_20261021T052203Z/acceptance.json",
+      "source_repository": "frankie-chew-nus/agentic-workflow-operator-dashboard",
+      "source_branch": "fix/w6-b-governance-controls",
+      "source_path": "gate2_evidence/AE_Acceptance_20261021T052203Z/acceptance.json",
+      "source_git_blob_sha": "87f05ac6e4ab2c11a9ad99c2e233d45d0f422495",
+      "destination_git_blob_sha": "87f05ac6e4ab2c11a9ad99c2e233d45d0f422495",
+      "copy_status": "EXACT_BLOB_MATCH",
+      "purpose": "12-test hold-only acceptance metadata"
+    },
+    {
+      "destination": "gate2_submission_evidence/engineering/acceptance/AE_Acceptance_20261021T052203Z/unittest.txt",
+      "source_repository": "frankie-chew-nus/agentic-workflow-operator-dashboard",
+      "source_branch": "fix/w6-b-governance-controls",
+      "source_path": "gate2_evidence/AE_Acceptance_20261021T052203Z/unittest.txt",
+      "source_git_blob_sha": "3e42b089395ab2b69092eee6c537d4cf0850ee12",
+      "destination_git_blob_sha": "3e42b089395ab2b69092eee6c537d4cf0850ee12",
+      "copy_status": "EXACT_BLOB_MATCH",
+      "purpose": "12-test hold-only execution log"
+    },
+    {
+      "destination": "gate2_submission_evidence/engineering/acceptance/AE_BUILD_STATUS_2026-10-21.md",
+      "source_repository": "frankie-chew-nus/agentic-workflow-operator-dashboard",
+      "source_branch": "fix/w6-b-governance-controls",
+      "source_path": "gate2_evidence/AE_BUILD_STATUS_2026-10-21.md",
+      "source_git_blob_sha": "07a51fc47554e7a2eff543278cf76fc08a286f77",
+      "destination_git_blob_sha": "07a51fc47554e7a2eff543278cf76fc08a286f77",
+      "copy_status": "EXACT_BLOB_MATCH",
+      "purpose": "Current HOLD-only engineering status"
+    },
+    {
+      "destination": "gate2_submission_evidence/engineering/acceptance/B_BOUNDARY_ENGINEERING_RECORD_2026-10-21.md",
+      "source_repository": "frankie-chew-nus/agentic-workflow-operator-dashboard",
+      "source_branch": "fix/w6-b-governance-controls",
+      "source_path": "gate2_evidence/B_BOUNDARY_ENGINEERING_RECORD_2026-10-21.md",
+      "source_git_blob_sha": "5e5c028d0c049ffb085da2ca14b3262af30e420b",
+      "destination_git_blob_sha": "5e5c028d0c049ffb085da2ca14b3262af30e420b",
+      "copy_status": "EXACT_BLOB_MATCH",
+      "purpose": "B-to-C boundary implementation and limits"
+    },
+    {
+      "destination": "gate2_submission_evidence/engineering/b2c_fail_fix_pass/B2C_FAIL_FIX_PASS_METHOD_2026-10-21.md",
+      "source_repository": "frankie-chew-nus/agentic-workflow-operator-dashboard",
+      "source_branch": "fix/w6-b-governance-controls",
+      "source_path": "gate2_evidence/B2C_FAIL_FIX_PASS_METHOD_2026-10-21.md",
+      "source_git_blob_sha": "8a118a41ec8fdc8586f3924f4b57dab4700d7dc0",
+      "destination_git_blob_sha": "8a118a41ec8fdc8586f3924f4b57dab4700d7dc0",
+      "copy_status": "EXACT_BLOB_MATCH",
+      "purpose": "Disposable HTTP/SQLite FAIL-FIX-PASS method"
+    },
+    {
+      "destination": "gate2_submission_evidence/engineering/b2c_fail_fix_pass/B2C_FAIL_FIX_PASS_20261021T063902Z/acceptance.json",
+      "source_repository": "frankie-chew-nus/agentic-workflow-operator-dashboard",
+      "source_branch": "fix/w6-b-governance-controls",
+      "source_path": "gate2_evidence/B2C_FAIL_FIX_PASS_20261021T063902Z/acceptance.json",
+      "source_git_blob_sha": "97540eb526573af2ca26f288bfa43d4c1479685e",
+      "destination_git_blob_sha": "97540eb526573af2ca26f288bfa43d4c1479685e",
+      "copy_status": "EXACT_BLOB_MATCH",
+      "purpose": "18-test consolidated in-vitro acceptance result"
+    },
+    {
+      "destination": "gate2_submission_evidence/engineering/b2c_fail_fix_pass/B2C_FAIL_FIX_PASS_20261021T063902Z/unittest.txt",
+      "source_repository": "frankie-chew-nus/agentic-workflow-operator-dashboard",
+      "source_branch": "fix/w6-b-governance-controls",
+      "source_path": "gate2_evidence/B2C_FAIL_FIX_PASS_20261021T063902Z/unittest.txt",
+      "source_git_blob_sha": "b9af25db9471ed08cd8700dfd940c63a5599239e",
+      "destination_git_blob_sha": "b9af25db9471ed08cd8700dfd940c63a5599239e",
+      "copy_status": "EXACT_BLOB_MATCH",
+      "purpose": "18-test execution log"
+    },
+    {
+      "destination": "gate2_submission_evidence/economics/W9_1_WORKING_EVIDENCE_2026-10-18.md",
+      "source_repository": "frankie-chew-nus/agentic-workflow-operator-dashboard",
+      "source_branch": "fix/w6-b-governance-controls",
+      "source_path": "w9/W9_1_WORKING_EVIDENCE_2026-10-18.md",
+      "source_git_blob_sha": "58ee6b7c2cd122391bb7875e811b60119b3049db",
+      "destination_git_blob_sha": "58ee6b7c2cd122391bb7875e811b60119b3049db",
+      "copy_status": "EXACT_BLOB_MATCH",
+      "purpose": "W9 workflow and economics evidence index"
+    },
+    {
+      "destination": "gate2_submission_evidence/archive/gate2_submission_evidence_v4_sanitized.zip",
+      "source_repository": "frankie-chew-nus/agentic-workflow-operator-dashboard",
+      "source_branch": "feat/evidence-registry-v1",
+      "source_path": "gate2_submission_evidence/gate2_submission_evidence_v4_sanitized.zip",
+      "source_git_blob_sha": "094849ce7f40ac2dba911a857364f8c73afc751b",
+      "destination_git_blob_sha": "094849ce7f40ac2dba911a857364f8c73afc751b",
+      "copy_status": "EXACT_BLOB_MATCH",
+      "purpose": "Earlier sanitized 117-test evidence archive"
+    }
+  ]
+}

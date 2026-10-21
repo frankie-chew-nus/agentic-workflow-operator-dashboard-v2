@@ -1,0 +1,30 @@
+{
+  "evidence_class": "HISTORICAL_B_CHECKER_EXECUTABLE_TEST",
+  "scope": "T01-T03 candidate checks only; not end-to-end current B-to-C enforcement",
+  "timestamp_utc": "2026-10-18T13:47:26.852887+00:00",
+  "git_commit": "91197140a75f4754e86e2a5337bbdedc4b084cfa",
+  "git_branch": "test/w6-governance-scenarios",
+  "checker_path": "../gate2_build_v03B2/b_v2.py",
+  "checker_sha256": "62c2766af3332689b3dcd2f8a711581ccc0c29292cc47f9372dddfa29c20aac1",
+  "test_file_sha256": "aa8fdece2bc5e556b6cd78020017445827343c68de0332d55a701e2efce9114b",
+  "test_cases": [
+    {
+      "name": "test_T01_valid_candidate_passes_candidate_checks",
+      "result": "ok"
+    },
+    {
+      "name": "test_T02_ambiguous_signed_body_is_rejected",
+      "result": "ok"
+    },
+    {
+      "name": "test_T03_unapproved_evidence_is_rejected",
+      "result": "ok"
+    }
+  ],
+  "n": 3,
+  "denominator": 3,
+  "verdict": "PASS",
+  "production_authority": false,
+  "log_sha256": "3aa9263a029d0f46c793df83454b809557a7dbda408c555d5be675dc05c92f06",
+  "sanitized_log": "test_T01_valid_candidate_passes_candidate_checks ... ok\ntest_T02_ambiguous_signed_body_is_rejected ... ok\ntest_T03_unapproved_evidence_is_rejected ... ok\nRan 3 tests\nOK\n"
+}

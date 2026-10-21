@@ -1,0 +1,28 @@
+{
+  "evidence_class": "TRANSITION_GUARD_NEGATIVE_TEST",
+  "scope": "workflow_matrix.allowed only; scenario attributes not passed to guard; not full B-to-C workflow validation",
+  "timestamp_utc": "2026-10-18T15:19:21.461757+00:00",
+  "git_branch": "test/w6-governance-scenarios",
+  "git_commit": "69cb34a66478889f8562f350636c9543e71c3f7e",
+  "guard_sha256": "9421203c264b5bfe6652ff8e60dc074f1ec6bdbd71f7b05d10535229054c654f",
+  "test_sha256": "69dca2ae680f33866e7cdc5003cd887c398c9c3a02a44168eb918966f2c5550a",
+  "n": 2,
+  "denominator": 2,
+  "verdict": "COVERAGE_GAPS_CONFIRMED",
+  "failed": 2,
+  "findings": [
+    {
+      "id": "T09",
+      "observed": "AUTHORIZED without commission release count input",
+      "status": "GUARD_COVERAGE_GAP"
+    },
+    {
+      "id": "T10",
+      "observed": "AUTHORIZED without actor or rule-change provenance input",
+      "status": "GUARD_COVERAGE_GAP"
+    }
+  ],
+  "raw_log_sha256": "12db2c9320f5d4aa068312c2e3f81c6abe8f27c329bd65bcb0e6c8e675b278e9",
+  "sanitized_log": "test_T09_fourth_candidate_must_not_auto_release ... FAIL\ntest_T10_ai_rule_change_must_not_authorize_release ... FAIL\nRan 2 tests\nFAILED (failures=2)\n",
+  "production_authority": false
+}

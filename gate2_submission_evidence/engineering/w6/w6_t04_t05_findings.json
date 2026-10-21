@@ -1,0 +1,32 @@
+{
+  "evidence_class": "HISTORICAL_B_CHECKER_NEGATIVE_EXECUTABLE_TEST",
+  "scope": "Historical b_v2.checks only; current B-to-C production enforcement NOT VERIFIED",
+  "timestamp_utc": "2026-10-18T15:07:28.374353+00:00",
+  "git_branch": "test/w6-governance-scenarios",
+  "git_commit": "e32eebd077a919e53da6ab1e7b9af3a87ef0bcfa",
+  "checker_path": "../gate2_build_v03B2/b_v2.py",
+  "checker_sha256": "62c2766af3332689b3dcd2f8a711581ccc0c29292cc47f9372dddfa29c20aac1",
+  "test_file_sha256": "c87a7a1766f73b6b6695508405f5e6f41188137452d7e56d74ecb303ce799e19",
+  "n": 2,
+  "denominator": 2,
+  "verdict": "ENFORCEMENT_GAPS_FOUND",
+  "passed": 0,
+  "failed": 2,
+  "findings": [
+    {
+      "id": "T04",
+      "expected": "HOLD",
+      "observed": "No validation failures for unavailable resource",
+      "status": "FAIL"
+    },
+    {
+      "id": "T05",
+      "expected": "HOLD",
+      "observed": "No validation failures for opaque dependency",
+      "status": "FAIL"
+    }
+  ],
+  "raw_log_sha256": "86512932285b7124b7734f78cfc1c50b38c4b1c2492f1de1635ef814b55659d3",
+  "sanitized_log": "test_T04_missing_required_resource_must_hold ... FAIL\ntest_T05_prohibited_black_box_must_hold ... FAIL\nRan 2 tests\nFAILED (failures=2)\n",
+  "production_authority": false
+}

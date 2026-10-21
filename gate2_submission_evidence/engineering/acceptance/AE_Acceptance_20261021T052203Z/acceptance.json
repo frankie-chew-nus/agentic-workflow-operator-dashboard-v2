@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "test_exit_code": 0,
+  "suites": [
+    "test_ae_build_contract",
+    "test_b_operational_boundary",
+    "test_actual_dashboard_hold_no_pin"
+  ],
+  "active_dashboard_unchanged": true,
+  "active_dashboard_sha256": "9ed519245cba7c41d50188d4f0e73d4e06869697904869d48745266e45994d84",
+  "B_to_C_release": "HOLD_ONLY",
+  "C_stage": "REVIEW_REQUIRED",
+  "D_E": "SANDBOX_ONLY",
+  "T04_T05_T09_T10": "OPERATIONAL_HOLD",
+  "pin_in_scope": false,
+  "production_authority": false,
+  "limitations": [
+    "No live release authorization",
+    "No independent historical B ledger reconciliation",
+    "No C_PASS or D_OOS_PASS proven for current candidate"
+  ],
+  "git_evidence_record": "gate2_evidence/AE_BUILD_STATUS_2026-10-21.md"
+}
