@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "status": "TEXT_EXPORTS_UPLOADED_NOT_BYTE_IDENTICAL_TO_ORIGINAL",
+  "method": "Project indexed source text exported to GitHub; original byte identity not claimed",
+  "records": [
+    {
+      "week": "W5",
+      "path": "gate2_submission_evidence/homework/W5/W5v1.4.md",
+      "git_blob_sha": "b7923149e9e702b46408004ccc70c0b5f00c6086",
+      "source": "MSI5002 Project file W5v1.4.md",
+      "evidence_class": "DESIGN_OR_PAPER_RECORD"
+    },
+    {
+      "week": "W5",
+      "path": "gate2_submission_evidence/homework/W5/W5v1.4_records.md",
+      "git_blob_sha": "4f1234bc33445491f3b5b81d61c77e2f68bc5b1c",
+      "source": "MSI5002 Project file W5v1.4_records.md",
+      "evidence_class": "DESIGN_OR_PAPER_RECORD"
+    },
+    {
+      "week": "W5",
+      "path": "gate2_submission_evidence/homework/W5/MSI5002_W5_Gate2_Handover.md",
+      "git_blob_sha": "c836172e72221e86a9bc0814370d6066cb4d05d1",
+      "source": "MSI5002 Project file MSI5002_W5_Gate2_Handover.md",
+      "evidence_class": "DESIGN_OR_PAPER_RECORD"
+    },
+    {
+      "week": "W6",
+      "path": "gate2_submission_evidence/homework/W6/W6v1.3.md",
+      "git_blob_sha": "93ad6bf589823a50f52423156a9044e299ee1798",
+      "source": "MSI5002 Project file W6v1.3.md",
+      "evidence_class": "DESIGN_OR_PAPER_RECORD"
+    },
+    {
+      "week": "W6",
+      "path": "gate2_submission_evidence/homework/W6/W6.3 Test artifacts.md",
+      "git_blob_sha": "2a75f4dd50977e698fa4e2cd4d0c2881a8b5fb44",
+      "source": "MSI5002 Project file W6.3 Test artifacts.md",
+      "evidence_class": "DESIGN_OR_PAPER_RECORD"
+    },
+    {
+      "week": "W6",
+      "path": "gate2_submission_evidence/homework/W6/MSI5002_W6_Gate2_Handover.md",
+      "git_blob_sha": "5564de4cb2e253c5da5f4244dcaa1a77c5af1b0a",
+      "source": "MSI5002 Project file MSI5002_W6_Gate2_Handover.md",
+      "evidence_class": "DESIGN_OR_PAPER_RECORD"
+    },
+    {
+      "week": "W7",
+      "path": "gate2_submission_evidence/homework/W7/W7v1.2.md",
+      "git_blob_sha": "bcc77d2e7e98a2c5141f57d33d533fcf64a93d5d",
+      "source": "MSI5002 Project file W7v1.2.md",
+      "evidence_class": "DESIGN_OR_PAPER_RECORD"
+    },
+    {
+      "week": "W7",
+      "path": "gate2_submission_evidence/homework/W7/MSI5002_W7_Gate2_Handover.md",
+      "git_blob_sha": "a6fa82e89e0d81673db8caa4d6fafdc19968d326",
+      "source": "MSI5002 Project file MSI5002_W7_Gate2_Handover.md",
+      "evidence_class": "DESIGN_OR_PAPER_RECORD"
+    },
+    {
+      "week": "W8",
+      "path": "gate2_submission_evidence/homework/W8/W8v1.md",
+      "git_blob_sha": "53ec1b6c63465e8a5449b9ef72381bb523afc925",
+      "source": "MSI5002 Project file W8v1.md",
+      "evidence_class": "DESIGN_OR_PAPER_RECORD"
+    },
+    {
+      "week": "W8",
+      "path": "gate2_submission_evidence/homework/W8/MSI5002_W8_Gate2_Handover.md",
+      "git_blob_sha": "1601aef2dbb11f464dd9767c9cf3c04e1298cc12",
+      "source": "MSI5002 Project file MSI5002_W8_Gate2_Handover.md",
+      "evidence_class": "DESIGN_OR_PAPER_RECORD"
+    }
+  ]
+}

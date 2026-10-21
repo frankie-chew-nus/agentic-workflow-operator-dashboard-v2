@@ -95,3 +95,7 @@ The original Gemini and Perplexity billing screenshots are **not included in thi
 ## 7. Final interpretation
 
 The strongest engineering claim at this checkpoint is that the Operator has a tested fail-closed B→C boundary and an independently recorded disposable test showing both invalid-request HOLDs and single-use synthetic authorization. Original failures remain visible. The work does not establish a production-qualified trading strategy: B-002 remains review-required at C, D/E remain sandbox-only, and no production commissioning authority is granted.
+
+## 8. W5–W8 homework source imports (21 October 2026)
+
+The [W5–W8 source index](homework/W5_W8_SOURCE_INDEX.md) and [text-export manifest](manifests/w5_w8_text_export_manifest.json) now link ten original Project homework/handover records to Parts 1–7. They preserve source wording as indexed text exports, **not certified byte-identical original files**. W5 design and peer findings, W6 paper tests, W7 Human-return decisions, and W8 falsification/proof standards are now discoverable in this repository. This addition does not change the engineering PASS/HOLD status, establish a formal W8 freeze date, or substitute paper results for executable tests.
