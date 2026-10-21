@@ -1,2 +1,2 @@
-﻿# Python 3.11+ required.
-# Third-party B/C dependencies pending clean-install audit.
+# Core dashboard and regression suite use the Python 3.11+ standard library only.
+# Optional integrations (for example MetaTrader5) require their own platform setup.

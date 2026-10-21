@@ -1,14 +1,14 @@
-﻿{
-    "schema_version":  1,
-    "paths":  {
-                  "b_engine":  "gate2_operator_app_v1",
-                  "c_engine":  "gate2_c_controller",
-                  "operator_evidence":  "evidence",
-                  "c_market_manifest":  "gate2_c_controller/evidence/market_data/stage1_manifest.json"
-              },
-    "policy":  {
-                   "existing_engines_authoritative":  true,
-                   "no_workflow_migration":  true,
-                   "no_guessing_artifact_locations":  true
-               }
+{
+  "schema_version": 1,
+  "paths": {
+    "b_engine": "gate2_operator_app_v1",
+    "c_engine": "gate2_c_controller",
+    "operator_evidence": "evidence",
+    "c_market_manifest": "gate2_c_controller/evidence/market_data/stage1_manifest.json"
+  },
+  "policy": {
+    "existing_engines_authoritative": true,
+    "no_workflow_migration": true,
+    "no_guessing_artifact_locations": true
+  }
 }
