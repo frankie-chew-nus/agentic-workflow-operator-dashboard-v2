@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "status": "SCREENSHOTS_ARCHIVED_GIT_BLOB_VERIFIED",
+  "evidence_class": "PROVIDER_DASHBOARD_SCREENSHOT",
+  "files": [
+    {
+      "provider": "Gemini API",
+      "path": "gate2_submission_evidence/economics/geminicost.png",
+      "git_blob_sha": "280ee262802fcac685c6282e17b1fdb5bedfe722",
+      "size_bytes": 36831,
+      "displayed_cost_usd": 0.14,
+      "period": "2026-09-24 to 2026-10-21",
+      "scope": "All API Keys, All Models"
+    },
+    {
+      "provider": "Perplexity Search API",
+      "path": "gate2_submission_evidence/economics/perplexitycost.png",
+      "git_blob_sha": "1ba8a0ba4e2474e8e7d899a3cbf7329057cec5cf",
+      "size_bytes": 28019,
+      "displayed_cost_usd": 0.005,
+      "period": "Not fully visible in cropped screenshot"
+    }
+  ],
+  "limits": [
+    "Git blob SHA is not SHA-256",
+    "Provider screenshots are not invoice exports",
+    "Combined USD 0.145 spans different or partially unknown periods",
+    "Not exclusively attributed to this workflow"
+  ]
+}

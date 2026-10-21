@@ -70,7 +70,7 @@ Source: [W9 working evidence](economics/W9_1_WORKING_EVIDENCE_2026-10-18.md).
 
 The W9 working record contains recorded token usage, conditional token-cost calculations, local runtime measurements, and retrospective Human-time estimates. It explicitly cautions against treating repeated token fields as distinct paid usage without reconciliation.
 
-The original Gemini and Perplexity billing screenshots are **not included in this import batch**. Therefore this bundle alone does not independently verify the provider-reported USD 0.14 and USD 0.005 charges shown in the conversation. Those images should be added as sanitized artifacts before finalizing Part 4 cost claims.
+The original Gemini and Perplexity billing screenshots are now archived as [Gemini PNG](economics/geminicost.png) and [Perplexity PNG](economics/perplexitycost.png). They display provider-reported USD 0.14 and USD 0.005 charges respectively, but do not independently allocate those charges to this Operator's individual workflow operations.
 
 ## 5. Claim-to-evidence matrix
 
@@ -88,7 +88,7 @@ The original Gemini and Perplexity billing screenshots are **not included in thi
 
 1. Import and verify W5–W8 homework/handover records used for Parts 1–3 and the final claim map.
 2. Import the Week 10 handover and reconcile its proof dossier and pre-delivery findings.
-3. Add sanitized provider billing screenshots, then reconcile model/token usage to billing periods without double-counting.
+3. Reconcile model/token usage to the now-archived provider billing screenshots without double-counting.
 4. Revisit full-history equivalence status and the authoritative T04 resource, T05 dependency, T09 release-history and T10 policy-change inputs if the engineering track updates them.
 5. Confirm final repository branch HEAD and manifest state before citing this package in the submitted PDF.
 
@@ -102,4 +102,4 @@ The [W5–W8 source index](homework/W5_W8_SOURCE_INDEX.md) and [text-export mani
 
 ## 9. Provider-dashboard billing evidence (21 October 2026)
 
-The [billing observation record](economics/API_BILLING_EVIDENCE_2026-10-21.md) now captures user-supplied Gemini and Perplexity screenshot values: Gemini USD 0.14 over 24 September–21 October (all API keys and models), and Perplexity Search API USD 0.005 with the exact filter window not visible in the cropped screenshot. USD 0.145 is an arithmetic combined total across non-identical/incompletely identified periods, **not a verified end-to-end Operator cycle cost**. Original screenshot image bytes are **not yet archived in this repository**; no image SHA-256 is claimed. Billing-to-operation reconciliation remains outstanding.
+The [billing observation record](economics/API_BILLING_EVIDENCE_2026-10-21.md) now captures user-supplied Gemini and Perplexity screenshot values: Gemini USD 0.14 over 24 September–21 October (all API keys and models), and Perplexity Search API USD 0.005 with the exact filter window not visible in the cropped screenshot. USD 0.145 is an arithmetic combined total across non-identical/incompletely identified periods, **not a verified end-to-end Operator cycle cost**. Original screenshot PNG files are now archived as [Gemini](economics/geminicost.png) and [Perplexity](economics/perplexitycost.png). Git blob IDs are verified; independent PNG SHA-256 and billing-to-operation reconciliation remain outstanding.
