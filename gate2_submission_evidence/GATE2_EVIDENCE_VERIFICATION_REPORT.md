@@ -99,3 +99,7 @@ The strongest engineering claim at this checkpoint is that the Operator has a te
 ## 8. W5–W8 homework source imports (21 October 2026)
 
 The [W5–W8 source index](homework/W5_W8_SOURCE_INDEX.md) and [text-export manifest](manifests/w5_w8_text_export_manifest.json) now link ten original Project homework/handover records to Parts 1–7. They preserve source wording as indexed text exports, **not certified byte-identical original files**. W5 design and peer findings, W6 paper tests, W7 Human-return decisions, and W8 falsification/proof standards are now discoverable in this repository. This addition does not change the engineering PASS/HOLD status, establish a formal W8 freeze date, or substitute paper results for executable tests.
+
+## 9. Provider-dashboard billing evidence (21 October 2026)
+
+The [billing observation record](economics/API_BILLING_EVIDENCE_2026-10-21.md) now captures user-supplied Gemini and Perplexity screenshot values: Gemini USD 0.14 over 24 September–21 October (all API keys and models), and Perplexity Search API USD 0.005 with the exact filter window not visible in the cropped screenshot. USD 0.145 is an arithmetic combined total across non-identical/incompletely identified periods, **not a verified end-to-end Operator cycle cost**. Original screenshot image bytes are **not yet archived in this repository**; no image SHA-256 is claimed. Billing-to-operation reconciliation remains outstanding.
