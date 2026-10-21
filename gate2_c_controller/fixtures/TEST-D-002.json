@@ -1,0 +1,1 @@
+{"candidate_id":"TEST-D-002","evidence_class":"SYSTEM_TEST","production_eligible":false,"stage":"C_TO_D","state":"HASH_MISMATCH_TEST","detail":"Negative fixture: changed code hash; expected D HOLD"}

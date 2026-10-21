@@ -1,0 +1,175 @@
+{
+  "state": "CLERICAL_CONSISTENCY_CORRECTED_FROZEN",
+  "model": "gemini-3.1-flash-lite",
+  "parent_register_sha256": "47e987ea3599b9ea1d9d0b9d587d2e0da3256d84c937864450ea8785c2d0a65a",
+  "return_record_sha256": "31e952cac836f66296d1333bc13a6fb2c48403347f43426eec7ab610528a8a4b",
+  "candidates": [
+    {
+      "candidate_id": "CAND-B-001",
+      "version": "v2.1.1",
+      "research_domain": "XAUUSD M1 Price Action",
+      "hypothesis": "Mean reversion of M1 price action following an exhaustion candle is more statistically significant when filtered by a low-volatility regime.",
+      "evidence_refs": [
+        "SRC-A-003"
+      ],
+      "operator_assumptions": {
+        "market_regime_definition": "ATR(14) < 20-period moving average of ATR(14)"
+      },
+      "candle_definition": "Exhaustion candle: Bullish if (Close - Open) / (High - Low) < 0.2 and (Close - Open) > 0; Bearish if (Open - Close) / (High - Low) < 0.2 and (Open - Close) > 0; Body size > 1.5 * Average(abs(Close - Open), 10).",
+      "entry_logic": "Enter long if exhaustion candle is bearish and price breaks above High of exhaustion candle; enter short if exhaustion candle is bullish and price breaks below Low of exhaustion candle.",
+      "exit_logic": "Fixed stop loss at 1.5 * ATR(14); take profit at 2.0 * risk.",
+      "parameter_ranges": {
+        "atr_period": [
+          10,
+          20
+        ],
+        "body_multiplier": [
+          1.2,
+          2.0
+        ],
+        "risk_reward_ratio": [
+          1.5,
+          3.0
+        ]
+      },
+      "context_filters": "Low-volatility regime required: ATR(14) < 20-period moving average of ATR(14).",
+      "required_inputs": [
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "ATR"
+      ],
+      "prohibited_dependencies": [
+        "Martingale",
+        "Grid",
+        "Averaging-down",
+        "Machine Learning"
+      ],
+      "unresolved_questions": [
+        "Does the M1 noise floor render the exhaustion signal statistically indistinguishable from random walk?"
+      ]
+    },
+    {
+      "candidate_id": "CAND-B-002",
+      "version": "v2.1.1",
+      "research_domain": "XAUUSD M1 Price Action",
+      "hypothesis": "Momentum continuation following a breakout of a narrow range (NR-N) is more robust when confirmed by volatility expansion.",
+      "evidence_refs": [
+        "SRC-A-003"
+      ],
+      "operator_assumptions": {
+        "narrow_range_definition": "Current candle range (High - Low) is the minimum range across the prior N candles; N is searched only within 5-10 in C."
+      },
+      "candle_definition": "NR-N candle: current (High - Low) < min of (High-Low) for each of the prior N candles, where N is bounded to 5-10.",
+      "entry_logic": "Enter long if price exceeds High of the identified NR-N candle + breakout_buffer; enter short if price falls below Low of the identified NR-N candle - breakout_buffer.",
+      "exit_logic": "Trailing stop based on 2.0 * ATR(14) from current price.",
+      "parameter_ranges": {
+        "lookback_period": [
+          5,
+          10
+        ],
+        "breakout_buffer": [
+          0.05,
+          0.2
+        ],
+        "trailing_atr_multiplier": [
+          1.5,
+          3.0
+        ]
+      },
+      "context_filters": "None",
+      "required_inputs": [
+        "High",
+        "Low",
+        "Close",
+        "ATR"
+      ],
+      "prohibited_dependencies": [
+        "Martingale",
+        "Grid",
+        "Averaging-down",
+        "Machine Learning"
+      ],
+      "unresolved_questions": [
+        "Is the NR-N pattern frequency sufficient on M1 to overcome transaction costs?"
+      ]
+    },
+    {
+      "candidate_id": "CAND-B-003",
+      "version": "v2.1.1",
+      "research_domain": "XAUUSD M1 Price Action",
+      "hypothesis": "Pin-bar reversal patterns at key support/resistance levels exhibit higher success rates when the wick-to-body ratio exceeds a specific threshold.",
+      "evidence_refs": [
+        "SRC-A-003"
+      ],
+      "operator_assumptions": {
+        "support_resistance_definition": "Pivot points calculated from previous day High/Low/Close."
+      },
+      "candle_definition": "Pin-bar: ((High - Low) > 3 * abs(Close - Open)) AND (((min(Close, Open) - Low) / (High - Low) > 0.75) OR ((High - max(Close, Open)) / (High - Low) > 0.75)).",
+      "entry_logic": "Enter long if pin-bar occurs within 0.05% of S1/S2 pivot; enter short if pin-bar occurs within 0.05% of R1/R2 pivot.",
+      "exit_logic": "Stop loss at the extreme of the pin-bar wick; take profit at next pivot level.",
+      "parameter_ranges": {
+        "wick_body_ratio": [
+          2.0,
+          5.0
+        ],
+        "pivot_lookback": [
+          1,
+          1
+        ]
+      },
+      "context_filters": "None",
+      "required_inputs": [
+        "High",
+        "Low",
+        "Close",
+        "Open",
+        "Previous_Day_OHLC"
+      ],
+      "prohibited_dependencies": [
+        "Martingale",
+        "Grid",
+        "Averaging-down",
+        "Machine Learning"
+      ],
+      "unresolved_questions": [
+        "Does the definition of 'key level' provide enough edge to offset the high frequency of false breakouts on M1?"
+      ]
+    }
+  ],
+  "usage": {
+    "promptTokenCount": 1628,
+    "candidatesTokenCount": 1265,
+    "totalTokenCount": 2893,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 1628
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "parent_v2_sha256": "89fb05814bdcb9d15c2409683b5a0429336e71835db7ea51373b7e83c81e0cae",
+  "operator_clarification_record": {
+    "date": "2026-10-13",
+    "basis": "Final Human Operator semantic review after automated executability PASS; no Stage 1/OOS performance evidence was available.",
+    "changes": [
+      "CAND-B-001: low-volatility ATR regime made explicit context filter.",
+      "CAND-B-002: NR7 generalized to NR-N with N bounded 5-10; no performance-selected value.",
+      "CAND-B-003: pin-bar Boolean expression explicitly parenthesized."
+    ]
+  },
+  "parent_v2_1_sha256": "be2ad7c4ec6ee868a9f4d42e94a49dc0f31523539da7cc81d2890e8b54c4a410",
+  "v2_1_1_correction_record": {
+    "date": "2026-10-13",
+    "authority": "Human Operator",
+    "reason_code": "FROZEN_SPEC_INTERNAL_MISMATCH",
+    "performance_evidence_seen": false,
+    "changes": [
+      "CAND-B-002 residual NR7 references changed to NR-N.",
+      "Entry now uses existing breakout_buffer parameter rather than hardcoded 0.1.",
+      "No hypothesis, parameter bound, source, or C-owned evaluation condition changed."
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "B_GOVERNANCE_POLICY_V1",
+  "policy_id": "OPERATOR_APPROVED_B_POLICY",
+  "status": "DRAFT_NOT_APPROVED",
+  "research_commission_id": null,
+  "approved_resources": null,
+  "approved_dependencies": null,
+  "max_released_candidates": 3,
+  "release_ledger": null,
+  "rule_change_approval": null,
+  "operator_approval": null,
+  "production_authority": false
+}

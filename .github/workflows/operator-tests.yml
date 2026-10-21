@@ -1,0 +1,18 @@
+name: Operator regression tests
+on:
+  push:
+    branches: [feat/c-orchestration]
+  pull_request:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile dashboard and adapters
+        run: python -m compileall -q gate2.py c_controller.py c_source_authority.py c_source_diagnose.py c_source_provenance.py
+      - name: Run safe diagnostic tests
+        run: python -m unittest discover -p 'test_*.py' -v

@@ -1,1 +1,2 @@
-# Python 3.11+ standard library only; no pip dependencies required.
+﻿# Python 3.11+ required.
+# Third-party B/C dependencies pending clean-install audit.

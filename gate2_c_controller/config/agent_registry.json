@@ -1,0 +1,34 @@
+{
+  "agents": {
+    "orchestrator": {
+      "base_url_env": "DMR_BASE_URL",
+      "model_env": "DMR_MODEL",
+      "role": "local_lead"
+    },
+    "coding_agent": {
+      "base_url_env": "CODING_API_BASE_URL",
+      "model_env": "CODING_API_MODEL",
+      "api_key_env": "CODING_API_KEY",
+      "role": "external_coder"
+    }
+  },
+  "gateway": {
+    "blocked_terms": [
+      "xauusd",
+      "cand-b",
+      "stage 1",
+      "stage1",
+      "oos",
+      "cpc",
+      "drawdown",
+      "9-pip",
+      "9 pip",
+      "friction_pips",
+      "risk_percent",
+      "starting_equity",
+      "trade ledger",
+      "variant ledger"
+    ],
+    "max_green_chars": 5000
+  }
+}

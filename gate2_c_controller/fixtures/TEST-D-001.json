@@ -1,0 +1,1 @@
+{"candidate_id":"TEST-D-001","evidence_class":"SYNTHETIC_TEST","production_eligible":false,"stage":"C","state":"SYNTHETIC_STAGE1_PASS","detail":"Synthetic C PASS for D workflow testing only; never live-deployable","synthetic_stage1":{"cpc":1.35,"max_drawdown_pct":8.0,"max_daily_activities":120,"friction_pips":9,"structural_bans_pass":true}}

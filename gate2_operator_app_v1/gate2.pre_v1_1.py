@@ -1,0 +1,108 @@
+import json,sqlite3,datetime,uuid,subprocess,threading,webbrowser,html,sys,hashlib
+from pathlib import Path
+from http.server import ThreadingHTTPServer,BaseHTTPRequestHandler
+from urllib.parse import parse_qs
+
+BASE=Path(__file__).resolve().parent
+DB=BASE/"evidence"/"operator.db"
+PROJECT=BASE.parent
+CROOT=PROJECT/"gate2_c_controller"
+PORT=8787
+
+def now(): return datetime.datetime.now(datetime.timezone.utc).isoformat()
+def cx():
+ DB.parent.mkdir(parents=True,exist_ok=True)
+ c=sqlite3.connect(DB,timeout=30);c.row_factory=sqlite3.Row
+ c.executescript("""
+ CREATE TABLE IF NOT EXISTS research(id TEXT PRIMARY KEY,title TEXT,state TEXT,stage TEXT);
+ CREATE TABLE IF NOT EXISTS candidates(id TEXT PRIMARY KEY,research_id TEXT,state TEXT,stage TEXT,version TEXT,detail TEXT,q INTEGER);
+ CREATE TABLE IF NOT EXISTS decisions(id TEXT PRIMARY KEY,research_id TEXT,candidate_id TEXT,decision TEXT,rationale TEXT,created_at TEXT);
+ CREATE TABLE IF NOT EXISTS jobs(id TEXT PRIMARY KEY,research_id TEXT,candidate_id TEXT,kind TEXT,state TEXT,detail TEXT,log_path TEXT,created_at TEXT,started_at TEXT,finished_at TEXT,return_code INTEGER);
+ CREATE TABLE IF NOT EXISTS artifacts(id TEXT PRIMARY KEY,candidate_id TEXT,kind TEXT,path TEXT,sha256 TEXT,created_at TEXT);
+ """);return c
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def decision(c,rid,cid,d,rat):
+ c.execute("INSERT INTO decisions VALUES(?,?,?,?,?,?)",("DEC-"+uuid.uuid4().hex[:10].upper(),rid,cid,d,rat,now()))
+def init():
+ c=cx()
+ if not c.execute("SELECT 1 FROM research").fetchone():
+  rid="RES-XAUUSD";c.execute("INSERT INTO research VALUES(?,?,?,?)",(rid,"XAUUSD M1 Price Action","ACTIVE","B"))
+  for x in [("CAND-B-001","C_FAIL","C","v2.1.1","0/50 PASS",1),("CAND-B-002","B_REVIEW","B","v2.1.2","Corrected B release awaiting Human review",2),("CAND-B-003","C_FAIL","C","v2.1.1","0/7 PASS",3)]:
+   c.execute("INSERT INTO candidates VALUES(?,?,?,?,?,?,?)",(x[0],rid,x[1],x[2],x[3],x[4],x[5]))
+  decision(c,rid,"CAND-B-002","RETURN_TO_B","Volatility expansion is not deterministically defined. Return to B for a corrected specification before C implementation.")
+ c.commit();c.close()
+def active_job(c):return c.execute("SELECT * FROM jobs WHERE state IN ('QUEUED','RUNNING') LIMIT 1").fetchone()
+def queue(c,rid,cid,kind,detail):
+ if active_job(c):return False
+ jid="JOB-"+uuid.uuid4().hex[:10].upper();log=BASE/"evidence"/"logs"/(jid+".log");log.parent.mkdir(parents=True,exist_ok=True)
+ c.execute("INSERT INTO jobs VALUES(?,?,?,?,?,?,?,?,?,?,?)",(jid,rid,cid,kind,"QUEUED",detail,str(log),now(),None,None,None));return True
+def b_flow_cmd():
+ return [sys.executable,str(BASE/"b_resume_model_flow.py"),"--db",str(DB),"--register",str(CROOT/"inputs"/"candidate_strategy_register_v2_1_1_frozen.json"),"--candidate","CAND-B-002","--output-dir",str(BASE/"evidence"/"b_resume"/"CAND-B-002"),"--env",str(CROOT/".env")]
+def run_job(j):
+ if j["kind"]=="B_RESUME":
+  cmd=b_flow_cmd()
+ else:return 99,"No registered worker"
+ with open(j["log_path"],"w",encoding="utf-8") as f:q=subprocess.run(cmd,cwd=BASE,stdout=f,stderr=subprocess.STDOUT,text=True)
+ return q.returncode," ".join(cmd)
+def dispatcher():
+ while True:
+  c=cx();j=c.execute("SELECT * FROM jobs WHERE state='QUEUED' ORDER BY created_at LIMIT 1").fetchone()
+  if not j:c.close();threading.Event().wait(1);continue
+  c.execute("UPDATE jobs SET state='RUNNING',started_at=? WHERE id=?",(now(),j["id"]))
+  c.execute("UPDATE candidates SET state='B_RUNNING',stage='B',detail='Governed B correction running' WHERE id=?",(j["candidate_id"],));c.commit();c.close()
+  rc,cmd=run_job(j)
+  c=cx();c.execute("UPDATE jobs SET state='COMPLETE',finished_at=?,return_code=? WHERE id=?",(now(),rc,j["id"]))
+  rel=BASE/"evidence"/"b_resume"/j["candidate_id"]/"b_corrected_release.json"
+  if rc==0 and rel.exists():
+   x=json.load(open(rel,encoding="utf-8"));ver=x.get("candidate",{}).get("version","")
+   c.execute("UPDATE candidates SET state='B_REVIEW',stage='B',version=?,detail='Corrected B release awaiting Human review' WHERE id=?",(ver,j["candidate_id"]))
+   c.execute("INSERT INTO artifacts VALUES(?,?,?,?,?,?)",("ART-"+uuid.uuid4().hex[:8],j["candidate_id"],"B_CORRECTED_RELEASE",str(rel),sha(rel),now()))
+  else:c.execute("UPDATE candidates SET state='SYSTEM_HOLD',detail=? WHERE id=?",("B workflow failed. View "+j["log_path"],j["candidate_id"]))
+  c.commit();c.close()
+def review_data():
+ p=BASE/"evidence"/"b_resume"/"CAND-B-002"/"b_corrected_release.json"
+ if p.exists():return json.load(open(p,encoding="utf-8"))
+ # Seed from the already-executed release if user copies it into this app later.
+ return None
+def render():
+ c=cx();r=c.execute("SELECT * FROM research WHERE state='ACTIVE'").fetchone();cs=list(c.execute("SELECT * FROM candidates ORDER BY q"));job=active_job(c)
+ b='<div class=card><small>ACTIVE RESEARCH</small><h1>'+html.escape(r["title"])+'</h1><div class=lock>One research / one active process. New research blocked until terminal.</div></div>'
+ if job:
+  b+='<div class=card><b>RUNNING — NO ACTION REQUIRED</b><h2>'+job["candidate_id"]+'</h2><p>'+html.escape(job["detail"])+'</p><p>Evidence log: '+html.escape(job["log_path"])+'</p><button onclick="location.reload()">Refresh</button></div>'
+ else:
+  x=next((z for z in cs if z["id"]=="CAND-B-002"),None)
+  if x and x["state"]=="B_REVIEW":
+   rel=review_data()
+   b+='<div class="card action"><b>ACTION REQUIRED — HUMAN B→C REVIEW</b><h2>CAND-B-002 '+html.escape(x["version"] or "")+'</h2>'
+   if rel:
+    cand=rel["candidate"];b+='<p><b>Hypothesis:</b> '+html.escape(cand.get("hypothesis",""))+'</p><p><b>Volatility expansion:</b> '+html.escape(cand.get("operator_assumptions",{}).get("volatility_expansion_definition",""))+'</p><p><b>Unresolved:</b> '+html.escape("; ".join(cand.get("unresolved_questions",[])))+'</p><details><summary>View corrected specification</summary><pre>'+html.escape(json.dumps(cand,indent=2))+'</pre></details>'
+   else:b+='<p>Corrected release evidence has not yet been imported into this app. Return to B can still launch a fresh governed correction.</p>'
+   b+='<form method=post action=/decide><textarea name=rationale required minlength=12 placeholder="Human rationale"></textarea><input type=hidden name=candidate value=CAND-B-002><button name=decision value=RETURN_TO_B>Return to B</button><button class=bad name=decision value=REJECT>Reject</button><button class=good name=decision value=RELEASE_TO_C>Release to C</button></form></div>'
+  elif x and x["state"]=="SYSTEM_HOLD":
+   b+='<div class="card hold"><b>ACTION REQUIRED — SYSTEM HOLD</b><h2>CAND-B-002</h2><p>'+html.escape(x["detail"])+'</p><form method=post action=/decide><textarea name=rationale required minlength=12></textarea><input type=hidden name=candidate value=CAND-B-002><button name=decision value=RETRY_B>Retry same B work</button></form></div>'
+  elif x and x["state"]=="WAITING_FOR_B":
+   b+='<div class=card><b>ACTION REQUIRED</b><h2>Resume B</h2><form method=post action=/decide><textarea name=rationale required minlength=12></textarea><input type=hidden name=candidate value=CAND-B-002><button name=decision value=RESUME_B>Resume B</button></form></div>'
+ b+='<div class=card><h2>Candidate pipeline</h2><table><tr><th>ID</th><th>Version</th><th>Stage</th><th>State</th><th>Detail</th></tr>'
+ for x in cs:b+='<tr><td>'+x["id"]+'</td><td>'+html.escape(x["version"] or "")+'</td><td>'+x["stage"]+'</td><td>'+x["state"]+'</td><td>'+html.escape(x["detail"])+'</td></tr>'
+ b+='</table></div><div class=card><h2>Human decision ledger</h2><table><tr><th>Candidate</th><th>Decision</th><th>Rationale</th></tr>'
+ for d in c.execute("SELECT * FROM decisions ORDER BY created_at DESC"):b+='<tr><td>'+d["candidate_id"]+'</td><td>'+d["decision"]+'</td><td>'+html.escape(d["rationale"])+'</td></tr>'
+ b+='</table></div>';c.close()
+ css="body{font-family:Segoe UI,Arial;background:#f3f5f7;margin:0}header{background:#111827;color:white;padding:18px}main{max-width:1120px;margin:auto;padding:22px}.card{background:white;padding:18px;margin:14px 0;border:1px solid #ddd;border-radius:12px}.lock{background:#fee2e2;padding:12px}.action{border-left:6px solid #2563eb}.hold{border-left:6px solid #d97706}textarea{width:96%;min-height:75px;padding:10px;font-size:16px}button{padding:10px 14px;margin:8px 5px 0 0;background:#2563eb;color:white;border:0;border-radius:6px}.good{background:#15803d}.bad{background:#b91c1c}table{width:100%;border-collapse:collapse}td,th{padding:9px;border-bottom:1px solid #ddd;text-align:left}pre{white-space:pre-wrap;background:#f8fafc;padding:12px}"
+ return "<html><head><meta charset=utf-8><style>"+css+"</style></head><body><header><h2>Gate 2 Operator App</h2></header><main>"+b+"</main></body></html>"
+class H(BaseHTTPRequestHandler):
+ def do_GET(self):
+  b=render().encode();self.send_response(200);self.send_header("Content-Type","text/html; charset=utf-8");self.end_headers();self.wfile.write(b)
+ def do_POST(self):
+  n=int(self.headers.get("Content-Length",0));f=parse_qs(self.rfile.read(n).decode());c=cx();r=c.execute("SELECT * FROM research WHERE state='ACTIVE'").fetchone()
+  cid=f.get("candidate",[""])[0];d=f.get("decision",[""])[0];rat=f.get("rationale",[""])[0].strip();x=c.execute("SELECT * FROM candidates WHERE id=?",(cid,)).fetchone()
+  if x and len(rat)>=12 and not active_job(c):
+   if d in ("RETURN_TO_B","RESUME_B","RETRY_B"):
+    decision(c,r["id"],cid,d,rat);queue(c,r["id"],cid,"B_RESUME","Governed B correction via configured model endpoint")
+   elif d=="REJECT":
+    decision(c,r["id"],cid,d,rat);c.execute("UPDATE candidates SET state='REJECTED',detail='Human rejected candidate' WHERE id=?",(cid,))
+   elif d=="RELEASE_TO_C":
+    decision(c,r["id"],cid,d,rat);c.execute("UPDATE candidates SET state='READY_FOR_C',stage='B',detail='Human released corrected B candidate to C queue' WHERE id=?",(cid,))
+  c.commit();c.close();self.send_response(303);self.send_header("Location","/");self.end_headers()
+ def log_message(self,*a):pass
+if __name__=="__main__":
+ init();threading.Thread(target=dispatcher,daemon=True).start();u=f"http://127.0.0.1:{PORT}/";print(u);threading.Timer(.5,lambda:webbrowser.open(u)).start();ThreadingHTTPServer(("127.0.0.1",PORT),H).serve_forever()

@@ -1,0 +1,70 @@
+{
+  "contract_id": "B002_REVISION_CONTRACT_V1",
+  "candidate_id": "CAND-B-002",
+  "rules": [
+    {
+      "id": "IDENTITY",
+      "label": "Candidate identity preserved"
+    },
+    {
+      "id": "DOMAIN",
+      "label": "Research domain preserved"
+    },
+    {
+      "id": "HYPOTHESIS",
+      "label": "Hypothesis preserved unless Human authorizes reformulation"
+    },
+    {
+      "id": "EVIDENCE",
+      "label": "Approved evidence references preserved"
+    },
+    {
+      "id": "DEPENDENCIES",
+      "label": "No prohibited/black-box dependency added"
+    },
+    {
+      "id": "PARAMETERS",
+      "label": "Existing parameter/search ranges not silently widened"
+    },
+    {
+      "id": "STRICT_NR_N",
+      "label": "NR-N uses strict < consistently"
+    },
+    {
+      "id": "VOL_RULE",
+      "label": "Volatility expansion = breakout range > average range of preceding N candles"
+    },
+    {
+      "id": "VOL_ENTRY",
+      "label": "Volatility expansion required in both long and short entry logic"
+    },
+    {
+      "id": "ATR_DEFAULT",
+      "label": "ATR(14) multiplier 2.0 is default/start within authorized 1.5–3.0 range"
+    },
+    {
+      "id": "NO_REGRESSION",
+      "label": "Previously accepted requirements cannot disappear"
+    },
+    {
+      "id": "VERSION",
+      "label": "Every material correction increments immutable patch version"
+    },
+    {
+      "id": "A_ONLY",
+      "label": "B uses only approved A evidence package"
+    },
+    {
+      "id": "NO_C_PERF",
+      "label": "No C performance used to redesign B"
+    },
+    {
+      "id": "NO_RETRIEVAL",
+      "label": "No independent research/retrieval during correction"
+    },
+    {
+      "id": "HUMAN_RELEASE",
+      "label": "Human release required before C"
+    }
+  ]
+}
