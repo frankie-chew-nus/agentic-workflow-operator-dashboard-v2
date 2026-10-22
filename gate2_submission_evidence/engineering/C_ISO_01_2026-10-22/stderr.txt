@@ -1,0 +1,1 @@
+(empty stderr; subprocess exit code 0)
