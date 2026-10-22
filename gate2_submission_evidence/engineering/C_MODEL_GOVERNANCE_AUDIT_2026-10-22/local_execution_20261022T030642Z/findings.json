@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "evidence_class": "IN_VITRO_STATIC_INSPECTION_AND_MOCKED_ENDPOINTS",
+  "time_utc": "20261022T030642Z",
+  "test_exit_code": 0,
+  "working_repository_commit": "d60535041d0c185adb615e0019c5bf807d331bcd",
+  "source_sha256": {
+    "working/c_controller.py": "1394758439ed6fc8024df45ff8c8f97ade3e10e54b7324251b13390bdd3964ac",
+    "working/c_candidate_stage1_plan.py": "41585b25b5104ec79830a7c7841ec60d2ae136760b9d51c990f49ef172a8d78b",
+    "working/c_candidate_stage1_runner.py": "0abd73fe3037866b4f211dddf7908bda3e73c6533f5962c50ed65e00530c7a87",
+    "working/c_stage1_interface.py": "23e9147dda9db164a774cbbda62e1ef7c1343bbe8bc940d81b3404ded25ddbe1",
+    "working/c_gate_predicates.py": "c2fb2ca87e7ae1e03ccbc90681a45281555524fb931f53b78d2b53a331a13bec",
+    "working/test_gate2_c_model_audit.py": "441b989f53d9009e254c9315e4d1dde9a83f646de9e2161ca866cf579fcf1504",
+    "C/build_candidate_v2.py": "a51732298c957c5eb0166422bcc89a0cb797ecd84ddf5420812704a1a4565c39",
+    "C/file_authoritative_build.py": "36409246d9c4c1b65037e01eb0416e59042d1cd0111743fb9c79acb3f3c799d3",
+    "C/atomic_build_release_clean.py": "de259536b58fe3baa37f07a3afd55e917dd1109f4eca52b6df73de94c07f4d59",
+    "C/release_semantic_gate.py": "9f1afdb4b7b1181f4e8885a2f2a1f98d67a6528e6972778e98f1e53cbe62d933",
+    "C/semantic_repair_release.py": "579fec4c45d60e386325551c66a21a0589e308545258afe675ec5c591e9bdaa6",
+    "C/stage1_runner_v3.py": "051c691a3ce20ddbb5401839530d8068e14ef59e77446f1d81fd22e78e303112",
+    "C/c_controller.py": "0a4a4849f645241462b3ce459a16dbf93caef2028e02266f239212661f9543ae",
+    "C/config/agent_registry.json": "cac2aac5ba147e5a8d34b61239ded577e73a084b9e2c6aa4bf551d46cd98068a",
+    "B/model_endpoint.py": "3c3a62b8200bc88ea12e2c979116c227d1c73e0cf6a16f7e6ed116234b80cfc2",
+    "B/b_model_adapter.py": "4493c69d0739c7ed92dfe0131419e181cd4904d1f148b4e45944ee165396eb84"
+  },
+  "source_unchanged": true,
+  "live_model_calls": 0,
+  "live_network_requests": 0,
+  "strategy_executed": false,
+  "backtests_executed": false,
+  "active_workflow_modified": false,
+  "scope": "Source and mocked protocol checks only; no live runtime security isolation proven",
+  "limitations": [
+    "No real DMR/Gemma provider call in this run",
+    "No real provider interchangeability demonstrated",
+    "No malicious generated strategy code executed",
+    "Historical local C static checker not verified as active integrated control"
+  ]
+}
