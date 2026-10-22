@@ -1,0 +1,40 @@
+{
+  "test_id": "C-ISO-01",
+  "classification": "FAIL",
+  "evidence_class": "IN_VITRO_DISPOSABLE_SYNTHETIC",
+  "time_utc": "2026-10-22T03:17:16.667472+00:00",
+  "source_archive": "v2-main-final-audit.zip",
+  "source_archive_sha256": "7078df32feedd53e93f85434ce80181b9bacc669d560a20545b75e6fef67b064",
+  "entrypoint": "gate2_c_controller/release_semantic_gate.py:load (importlib.util.spec_from_file_location + exec_module)",
+  "synthetic_module_sha256": "55f7cc10e41c4d9eac45080cc25d5105c3f0efebd2556a11012d7f347d05cab4",
+  "before_sha256": {
+    "release_semantic_gate.py": "c8f6bcf5de4880b39f1f68e37b4413f7e0f2e376db77e9ce5abeb0169ad6a1df",
+    "stage1_runner_v3.py": "37a3b73c3584433d5e1c39a2c467408a088468cfbdb6c906f2aa42070bc7b6fb",
+    "synthetic_strategy.py": "55f7cc10e41c4d9eac45080cc25d5105c3f0efebd2556a11012d7f347d05cab4",
+    "implementation_release.json": "45f30aca96d159b4bd5adedf01fdacc225e093e4391807e886f5ad856ea556bc",
+    "frozen_spec.json": "42179124840ccd42a54fd4f2c246a5dde9bd72629e2342ad3e8669d0593fd32a"
+  },
+  "after_sha256": {
+    "release_semantic_gate.py": "c8f6bcf5de4880b39f1f68e37b4413f7e0f2e376db77e9ce5abeb0169ad6a1df",
+    "stage1_runner_v3.py": "595eb90551e31ae42d0d9579d7e26d48b07f8a46b5d0c8e500118b6bdef89158",
+    "synthetic_strategy.py": "55f7cc10e41c4d9eac45080cc25d5105c3f0efebd2556a11012d7f347d05cab4",
+    "implementation_release.json": "45f30aca96d159b4bd5adedf01fdacc225e093e4391807e886f5ad856ea556bc",
+    "frozen_spec.json": "42179124840ccd42a54fd4f2c246a5dde9bd72629e2342ad3e8669d0593fd32a"
+  },
+  "unauthorized_disposable_runner_write_succeeded": true,
+  "runner_write_denied": false,
+  "governance_hold_observed": false,
+  "gate_state": "SEMANTIC_GATE_PASS",
+  "candidate_code_executed": true,
+  "evaluation_continued_after_write": true,
+  "stage1_evaluation_executed": false,
+  "subprocess_returncode": 0,
+  "production_files_modified": false,
+  "remediation_performed": false,
+  "limitations": [
+    "No real strategy or production runner used",
+    "A semantic HOLD after module import does not undo prior side effects",
+    "No network or external-file access was attempted",
+    "Does not test OS-level sandboxing or active local sibling engine byte identity"
+  ]
+}
