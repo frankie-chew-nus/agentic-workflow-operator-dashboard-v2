@@ -1,0 +1,15 @@
+test_c_model_agent_config_without_env_holds (test_gate2_c_model_audit.GovernanceAuditTests.test_c_model_agent_config_without_env_holds) ... ok
+test_c_model_chat_openai_compatible_mock (test_gate2_c_model_audit.GovernanceAuditTests.test_c_model_chat_openai_compatible_mock) ... ok
+test_compile_is_not_import_allowlist (test_gate2_c_model_audit.GovernanceAuditTests.test_compile_is_not_import_allowlist) ... ok
+test_composer_has_no_runner_write_reference (test_gate2_c_model_audit.GovernanceAuditTests.test_composer_has_no_runner_write_reference) ... ok
+test_endpoint_missing_config_fails_closed (test_gate2_c_model_audit.GovernanceAuditTests.test_endpoint_missing_config_fails_closed) ... ok
+test_endpoint_openai_switch_mock_no_network (test_gate2_c_model_audit.GovernanceAuditTests.test_endpoint_openai_switch_mock_no_network) ... ok
+test_endpoint_unsupported_protocol_fails_closed (test_gate2_c_model_audit.GovernanceAuditTests.test_endpoint_unsupported_protocol_fails_closed) ... ok
+test_gateway_blocks_strategy_terms_but_not_enforced_runtime_sandbox (test_gate2_c_model_audit.GovernanceAuditTests.test_gateway_blocks_strategy_terms_but_not_enforced_runtime_sandbox) ... ok
+test_released_module_is_imported_in_process (test_gate2_c_model_audit.GovernanceAuditTests.test_released_module_is_imported_in_process) ... ok
+test_semantic_gate_checks_are_bounded (test_gate2_c_model_audit.GovernanceAuditTests.test_semantic_gate_checks_are_bounded) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.057s
+
+OK
