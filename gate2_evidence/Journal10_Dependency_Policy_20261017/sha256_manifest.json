@@ -1,0 +1,52 @@
+﻿[
+    {
+        "path":  "J10-E2_Failed_Check/c_orchestrator.py",
+        "sha256":  "d5462b0b3ab5b82e92f3d87bed3a31ae4d54d0675dea0318355298fbe756df41",
+        "original_last_write_utc":  "2026-10-14T06:56:16.0000000Z"
+    },
+    {
+        "path":  "J10-E2_Failed_Check/evidence/implementation_runs/CAND-B-001/implementation_hold.json",
+        "sha256":  "89507183fe831fff45e40d3b827fb600dbeab8e4231c4c057f492dc327452635",
+        "original_last_write_utc":  "2026-10-15T00:23:04.0822255Z"
+    },
+    {
+        "path":  "J10-E2_Failed_Check/evidence/implementation_runs/CAND-B-001/r1/static.json",
+        "sha256":  "1713f369a40eda1e36138081b4e67143b6c2d475bb1739a1c00533c439946c82",
+        "original_last_write_utc":  "2026-10-15T00:18:54.5956752Z"
+    },
+    {
+        "path":  "J10-E3_Human_Challenge/evidence/implementation_runs_v2/CAND-B-001/operator_dependency_clarification.json",
+        "sha256":  "4fac1d9dcab190ce04296f7e6865b4d257b8341888c028fbc1f2ce5c5a7fb9cd",
+        "original_last_write_utc":  "2026-10-15T01:40:08.3879391Z"
+    },
+    {
+        "path":  "J10-E4_Revised_Policy/c_orchestrator_v2.py",
+        "sha256":  "93aa0fceeef74c8e0288264437716cdd0fa0814fc34e36a722a5a53d7d4a8ec9",
+        "original_last_write_utc":  "2026-10-14T17:01:44.0000000Z"
+    },
+    {
+        "path":  "J10-E4_Revised_Policy/c_orchestrator_v3.py",
+        "sha256":  "7704ee4223d2937f8b7df984fab91f4c3b9edb919aeead67d106543155236fab",
+        "original_last_write_utc":  "2026-10-14T17:56:58.0000000Z"
+    },
+    {
+        "path":  "J10-E4_Revised_Policy/evidence/implementation_runs_v2/CAND-B-001/implementation_hold.json",
+        "sha256":  "058023e1e7175abb0134ebb44b173ba6db48346438098b5e031b227ed8d24d0f",
+        "original_last_write_utc":  "2026-10-15T01:48:14.2201326Z"
+    },
+    {
+        "path":  "J10-E4_Revised_Policy/evidence/implementation_runs_v2/CAND-B-001/r1/static.json",
+        "sha256":  "0c6d0388fc06cbff29e1cc239810db2cc24fae627e976326386b7ad93c7db571",
+        "original_last_write_utc":  "2026-10-15T01:41:22.8847189Z"
+    },
+    {
+        "path":  "J10-E4_Revised_Policy/evidence/implementation_runs_v3/CAND-B-001/implementation_hold.json",
+        "sha256":  "a23ae6d1ba09385987725e926122e944a56bf862b7c1b855ece112863f52eb7d",
+        "original_last_write_utc":  "2026-10-15T02:20:36.2262499Z"
+    },
+    {
+        "path":  "J10-E4_Revised_Policy/evidence/implementation_runs_v3/CAND-B-001/r1/static.json",
+        "sha256":  "1d5530994d000e110efca0d2621f87105aa7816b4dc2e034d09e28464e964aee",
+        "original_last_write_utc":  "2026-10-15T02:13:40.0810237Z"
+    }
+]

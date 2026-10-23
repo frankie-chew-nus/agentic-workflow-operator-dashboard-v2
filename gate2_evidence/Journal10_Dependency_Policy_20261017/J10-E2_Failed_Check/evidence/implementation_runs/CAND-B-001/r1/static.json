@@ -1,0 +1,11 @@
+{
+  "state": "HOLD",
+  "failures": [
+    "FORBIDDEN_IMPORT:numpy",
+    "FORBIDDEN_IMPORT:typing",
+    "MISSING_FUNCTION:metadata",
+    "MISSING_FUNCTION:parameter_schema",
+    "MISSING_FUNCTION:prepare",
+    "MISSING_FUNCTION:signal"
+  ]
+}

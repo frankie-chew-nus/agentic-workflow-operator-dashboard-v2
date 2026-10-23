@@ -1,0 +1,11 @@
+{
+  "decision_id": "BLACK_BOX_CLARIFICATION_V1",
+  "timing": "PRE_STAGE1_PERFORMANCE",
+  "rule": "Locally inspectable, traceable and reproducible computation is permitted; opaque/remote material strategy computation is prohibited.",
+  "allowed_examples": [
+    "standard library",
+    "numpy",
+    "pandas"
+  ],
+  "performance_evidence_seen": false
+}

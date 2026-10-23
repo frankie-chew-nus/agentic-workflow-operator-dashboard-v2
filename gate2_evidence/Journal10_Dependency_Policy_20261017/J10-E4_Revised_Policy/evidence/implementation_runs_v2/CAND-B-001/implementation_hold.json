@@ -1,0 +1,45 @@
+{
+  "state": "HOLD_FOR_HUMAN",
+  "candidate_id": "CAND-B-001",
+  "version": "v2.1.1",
+  "reason": "MAX_BOUNDED_REPAIR_REVISIONS",
+  "history": [
+    {
+      "revision": 1,
+      "module_sha256": "1d92c4ceb70fdb780ee8086ca5a6949f93aeee734ce96f7b37047d731e060101",
+      "failures": [
+        "RUNTIME:TypeError:list indices must be integers or slices, not str"
+      ]
+    },
+    {
+      "revision": 2,
+      "module_sha256": "1d599bcb3e6beb862343eecb1fb9f8651aca776b3646f17497b81d88c7e56849",
+      "failures": [
+        "RUNTIME:TypeError:list indices must be integers or slices, not str"
+      ]
+    },
+    {
+      "revision": 3,
+      "module_sha256": "aa0e493f5dc453458da5b8d3659b5fba8b16c8d8bf392cf128a57f75ffff4802",
+      "failures": [
+        "RUNTIME:TypeError:list indices must be integers or slices, not str"
+      ]
+    },
+    {
+      "revision": 4,
+      "module_sha256": "cf6c5959f8ab091917a3e229eca2e8f9c4e49b35244f31275c0382537e7d3ab7",
+      "failures": [
+        "RUNTIME:TypeError:list indices must be integers or slices, not str"
+      ]
+    },
+    {
+      "revision": 5,
+      "module_sha256": "35240af4d1cbcebe48a92ab327da6717ba6bc13e4dc5a09fc8c5c3b16d9efa4b",
+      "failures": [
+        "RUNTIME:TypeError:list indices must be integers or slices, not str"
+      ]
+    }
+  ],
+  "dependency_policy": "inspectability_v1",
+  "stage1_performance_seen": false
+}

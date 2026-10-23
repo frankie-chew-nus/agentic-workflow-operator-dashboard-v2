@@ -1,0 +1,61 @@
+{
+  "state": "HOLD_FOR_HUMAN",
+  "candidate_id": "CAND-B-001",
+  "version": "v2.1.1",
+  "reason": "MAX_BOUNDED_REPAIR_REVISIONS",
+  "history": [
+    {
+      "revision": 1,
+      "module_sha256": "41d4b0823b704c07e65baeb6ba9a8445e3164ad131912a8d0469b212ac772414",
+      "failures": [
+        "FORBIDDEN_IMPORT:numpy",
+        "FORBIDDEN_IMPORT:typing",
+        "MISSING_FUNCTION:metadata",
+        "MISSING_FUNCTION:parameter_schema",
+        "MISSING_FUNCTION:prepare",
+        "MISSING_FUNCTION:signal"
+      ]
+    },
+    {
+      "revision": 2,
+      "module_sha256": "bc6d1cf0e00f3af3a4c203bac6918f73c941e9e25f5197ce537ba0c8a31a8299",
+      "failures": [
+        "MISSING_FUNCTION:metadata",
+        "MISSING_FUNCTION:parameter_schema",
+        "MISSING_FUNCTION:prepare",
+        "MISSING_FUNCTION:signal"
+      ]
+    },
+    {
+      "revision": 3,
+      "module_sha256": "964b3a1cd77848664b54f448d71ee514a4268a1709f056d8a6efab0c4ff40c79",
+      "failures": [
+        "MISSING_FUNCTION:metadata",
+        "MISSING_FUNCTION:parameter_schema",
+        "MISSING_FUNCTION:prepare",
+        "MISSING_FUNCTION:signal"
+      ]
+    },
+    {
+      "revision": 4,
+      "module_sha256": "964b3a1cd77848664b54f448d71ee514a4268a1709f056d8a6efab0c4ff40c79",
+      "failures": [
+        "MISSING_FUNCTION:metadata",
+        "MISSING_FUNCTION:parameter_schema",
+        "MISSING_FUNCTION:prepare",
+        "MISSING_FUNCTION:signal"
+      ]
+    },
+    {
+      "revision": 5,
+      "module_sha256": "964b3a1cd77848664b54f448d71ee514a4268a1709f056d8a6efab0c4ff40c79",
+      "failures": [
+        "MISSING_FUNCTION:metadata",
+        "MISSING_FUNCTION:parameter_schema",
+        "MISSING_FUNCTION:prepare",
+        "MISSING_FUNCTION:signal"
+      ]
+    }
+  ],
+  "stage1_performance_seen": false
+}
