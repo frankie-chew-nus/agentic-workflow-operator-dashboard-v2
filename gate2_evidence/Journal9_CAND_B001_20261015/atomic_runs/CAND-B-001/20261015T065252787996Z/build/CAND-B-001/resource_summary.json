@@ -1,0 +1,22 @@
+{
+  "agents": {
+    "LOCAL_DMR": {
+      "calls": 2,
+      "prompt_tokens": 1322,
+      "completion_tokens": 1016,
+      "total_tokens": 2338
+    },
+    "EXTERNAL_CODING_AGENT": {
+      "calls": 2,
+      "prompt_tokens": 72,
+      "completion_tokens": 910,
+      "total_tokens": 982
+    }
+  },
+  "total_calls": 4,
+  "total_tokens": 3320,
+  "green_delegations_released": 2,
+  "delegations_withheld": 2,
+  "local_repair_attempts": 0,
+  "external_api_cost_usd": "NOT_CALCULATED_PRICE_CONFIG_REQUIRED"
+}

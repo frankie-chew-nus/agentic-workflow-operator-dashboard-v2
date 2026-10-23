@@ -1,0 +1,5 @@
+{
+  "state": "HOLD",
+  "sha256": "56518032eb4407dd44ed92d144f6d0f6376b4e248a1ef8e7b04e2dd2fa7d5cff",
+  "error": "  File \"workspace\\CAND-B-001\\build_v2\\component_01.py\", line 1\n    ```python\n    ^\nSyntaxError: invalid syntax\n"
+}

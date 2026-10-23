@@ -1,0 +1,8 @@
+{
+  "task": {
+    "task_id": "UTIL-VOL-001",
+    "instruction": "Implement a volatility regime filter using a rolling window comparison of a volatility indicator against its own moving average."
+  },
+  "classification": "GREEN",
+  "released": true
+}

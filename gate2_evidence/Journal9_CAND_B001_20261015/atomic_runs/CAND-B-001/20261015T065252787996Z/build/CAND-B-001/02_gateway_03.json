@@ -1,0 +1,8 @@
+{
+  "task": {
+    "task_id": "UTIL-EXEC-003",
+    "instruction": "Create a breakout detection utility that monitors price breaches relative to the high/low extremes of a identified reference candle."
+  },
+  "classification": "RED",
+  "released": false
+}

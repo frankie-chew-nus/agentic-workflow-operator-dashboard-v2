@@ -1,0 +1,8 @@
+{
+  "task": {
+    "task_id": "UTIL-CAND-002",
+    "instruction": "Develop a candle pattern recognition utility to calculate body-to-range ratios and identify relative body size outliers based on a rolling lookback period."
+  },
+  "classification": "GREEN",
+  "released": true
+}

@@ -1,0 +1,8 @@
+{
+  "task": {
+    "task_id": "UTIL-002",
+    "instruction": "Develop a volatility regime filter comparing current ATR against its own moving average."
+  },
+  "classification": "GREEN",
+  "released": true
+}

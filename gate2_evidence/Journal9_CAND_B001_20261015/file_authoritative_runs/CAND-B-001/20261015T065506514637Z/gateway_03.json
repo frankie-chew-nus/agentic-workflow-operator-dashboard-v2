@@ -1,0 +1,8 @@
+{
+  "task": {
+    "task_id": "UTIL-003",
+    "instruction": "Create a breakout detection module that monitors price breaches relative to a specific candle's high or low boundaries."
+  },
+  "classification": "RED",
+  "released": false
+}

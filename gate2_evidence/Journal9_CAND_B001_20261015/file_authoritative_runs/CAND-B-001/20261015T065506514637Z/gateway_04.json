@@ -1,0 +1,8 @@
+{
+  "task": {
+    "task_id": "UTIL-004",
+    "instruction": "Implement a risk-based exit calculator that derives stop-loss and take-profit levels from a provided volatility metric."
+  },
+  "classification": "RED",
+  "released": false
+}

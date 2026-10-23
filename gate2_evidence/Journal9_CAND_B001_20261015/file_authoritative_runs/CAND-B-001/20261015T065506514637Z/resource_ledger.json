@@ -1,0 +1,38 @@
+[
+  {
+    "agent": "DMR",
+    "model": "gemini-3.1-flash-lite-preview",
+    "purpose": "DECOMPOSITION",
+    "payload_class": "RED_LOCAL",
+    "prompt_tokens": 588,
+    "completion_tokens": 302,
+    "total_tokens": 890
+  },
+  {
+    "agent": "CODING_AGENT",
+    "model": "gemini-3.1-flash-lite-preview",
+    "purpose": "UTIL-001",
+    "payload_class": "GREEN",
+    "prompt_tokens": 36,
+    "completion_tokens": 298,
+    "total_tokens": 334
+  },
+  {
+    "agent": "CODING_AGENT",
+    "model": "gemini-3.1-flash-lite-preview",
+    "purpose": "UTIL-002",
+    "payload_class": "GREEN",
+    "prompt_tokens": 27,
+    "completion_tokens": 213,
+    "total_tokens": 240
+  },
+  {
+    "agent": "DMR",
+    "model": "gemini-3.1-flash-lite-preview",
+    "purpose": "INTEGRATION",
+    "payload_class": "RED_LOCAL",
+    "prompt_tokens": 1536,
+    "completion_tokens": 710,
+    "total_tokens": 2246
+  }
+]

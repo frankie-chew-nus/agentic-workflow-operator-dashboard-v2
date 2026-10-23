@@ -1,0 +1,9 @@
+{
+  "total_calls": 4,
+  "total_tokens": 3710,
+  "dmr_tokens": 3136,
+  "coding_agent_tokens": 574,
+  "green_released": 2,
+  "withheld": 2,
+  "repairs": 0
+}

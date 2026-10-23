@@ -1,0 +1,19 @@
+{
+  "state": "IMPLEMENTATION_RELEASED",
+  "candidate_id": "CAND-B-001",
+  "run_id": "20261015T065506514637Z",
+  "release_module": "evidence\\file_authoritative_runs\\CAND-B-001\\20261015T065506514637Z\\release\\strategy_module.py",
+  "release_record": "evidence\\file_authoritative_runs\\CAND-B-001\\20261015T065506514637Z\\release\\implementation_release.json",
+  "module_sha256": "a22037873bdaceb11247f6e64652595817f2b16807259c419d33449977ba185c",
+  "release_hash_verified": true,
+  "stage1_performance_seen": false,
+  "resources": {
+    "total_calls": 4,
+    "total_tokens": 3710,
+    "dmr_tokens": 3136,
+    "coding_agent_tokens": 574,
+    "green_released": 2,
+    "withheld": 2,
+    "repairs": 0
+  }
+}

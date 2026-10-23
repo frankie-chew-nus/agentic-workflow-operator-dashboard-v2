@@ -1,0 +1,8 @@
+{
+  "task": {
+    "task_id": "UTIL-RISK-004",
+    "instruction": "Implement a dynamic risk management utility that calculates stop-loss and take-profit levels based on a volatility-adjusted multiplier."
+  },
+  "classification": "RED",
+  "released": false
+}

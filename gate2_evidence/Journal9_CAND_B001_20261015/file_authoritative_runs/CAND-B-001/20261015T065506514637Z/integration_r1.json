@@ -1,0 +1,6 @@
+{
+  "state": "PASS",
+  "module": "evidence\\file_authoritative_runs\\CAND-B-001\\20261015T065506514637Z\\workspace\\strategy_module_r1.py",
+  "file_sha256": "a22037873bdaceb11247f6e64652595817f2b16807259c419d33449977ba185c",
+  "failures": []
+}

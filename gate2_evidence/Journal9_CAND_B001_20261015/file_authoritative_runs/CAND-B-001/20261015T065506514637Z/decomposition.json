@@ -1,0 +1,21 @@
+{
+  "generic_tasks": [
+    {
+      "task_id": "UTIL-001",
+      "instruction": "Implement a function to calculate candle body-to-range ratio and identify relative body size against a rolling window average."
+    },
+    {
+      "task_id": "UTIL-002",
+      "instruction": "Develop a volatility regime filter comparing current ATR against its own moving average."
+    },
+    {
+      "task_id": "UTIL-003",
+      "instruction": "Create a breakout detection module that monitors price breaches relative to a specific candle's high or low boundaries."
+    },
+    {
+      "task_id": "UTIL-004",
+      "instruction": "Implement a risk-based exit calculator that derives stop-loss and take-profit levels from a provided volatility metric."
+    }
+  ],
+  "integration_plan": "1. Initialize data stream with OHLCV and ATR inputs. 2. Apply UTIL-002 to gate signal generation based on volatility state. 3. Execute UTIL-001 to flag candidate candles. 4. Monitor price action via UTIL-003 for entry triggers. 5. Upon entry, instantiate exit orders using UTIL-004. 6. Enforce strict prohibition of non-linear position sizing or predictive modeling dependencies."
+}

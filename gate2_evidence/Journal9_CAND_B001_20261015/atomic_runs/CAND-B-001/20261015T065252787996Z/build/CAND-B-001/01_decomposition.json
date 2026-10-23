@@ -1,0 +1,30 @@
+{
+  "plan": {
+    "generic_tasks": [
+      {
+        "task_id": "UTIL-VOL-001",
+        "instruction": "Implement a volatility regime filter using a rolling window comparison of a volatility indicator against its own moving average."
+      },
+      {
+        "task_id": "UTIL-CAND-002",
+        "instruction": "Develop a candle pattern recognition utility to calculate body-to-range ratios and identify relative body size outliers based on a rolling lookback period."
+      },
+      {
+        "task_id": "UTIL-EXEC-003",
+        "instruction": "Create a breakout detection utility that monitors price breaches relative to the high/low extremes of a identified reference candle."
+      },
+      {
+        "task_id": "UTIL-RISK-004",
+        "instruction": "Implement a dynamic risk management utility that calculates stop-loss and take-profit levels based on a volatility-adjusted multiplier."
+      }
+    ],
+    "integration_plan": {
+      "phase_1": "Validate data stream integrity for OHLC and volatility inputs.",
+      "phase_2": "Deploy volatility regime filter as a global gatekeeper for signal generation.",
+      "phase_3": "Integrate candle pattern recognition to flag potential entry triggers.",
+      "phase_4": "Implement breakout logic with conditional execution based on phase 2 and 3 outputs.",
+      "phase_5": "Apply risk management utility to all active positions and monitor for noise-floor sensitivity."
+    }
+  },
+  "stage1_performance_seen": false
+}
